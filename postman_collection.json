@@ -1,0 +1,38 @@
+{
+  "info": {
+    "name": "Listenerrr API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Upload Lecture",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {"key": "title", "value": "Sample Lecture", "type": "text"},
+            {"key": "video_url", "value": "https://example.com/video.mp4", "type": "text"}
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/upload",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "upload"]
+        }
+      }
+    },
+    {
+      "name": "Get Job Status",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/api/v1/jobs/{{job_id}}",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "jobs", "{{job_id}}"]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Listenerrr API",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/v1/upload": {
+      "post": {
+        "summary": "Upload lecture",
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "job_id": {"type": "string", "format": "uuid"},
+                    "status": {"type": "string"},
+                    "stage": {"type": "string"}
+                  },
+                  "required": ["job_id", "status", "stage"]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/jobs/{job_id}": {
+      "get": {
+        "summary": "Get job",
+        "parameters": [
+          {"name": "job_id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}
+        ],
+        "responses": {
+          "200": {
+            "description": "Job",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "job_id": {"type": "string", "format": "uuid"},
+                    "title": {"type": "string", "nullable": true},
+                    "status": {"type": "string"},
+                    "stage": {"type": "string"},
+                    "meta": {"type": "object"}
+                  },
+                  "required": ["job_id", "status", "stage", "meta"]
+                }
+              }
+            }
+          },
+          "404": {"description": "Not Found"}
+        }
+      }
+    }
+  }
+}

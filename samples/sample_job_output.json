@@ -1,0 +1,14 @@
+{
+  "job_id": "11111111-1111-1111-1111-111111111111",
+  "notes": {
+    "notes_md": "# Sample Notes\n- Point A\n- Point B",
+    "notes_pdf": "binary omitted"
+  },
+  "flashcards": [
+    {"q": "What is the topic?", "a": "Sample topic"}
+  ],
+  "search_index": {
+    "vectors": [[0.1, 0.2]],
+    "chunks": ["Sample chunk text"]
+  }
+}

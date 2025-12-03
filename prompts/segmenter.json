@@ -1,0 +1,1 @@
+Given a full transcript with timestamps, split into logical topics/chapters. Output JSON: [{"id":1,"start":"00:00:00","end":"00:10:12","title":"...","summary":"..."}]
